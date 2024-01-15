@@ -1,0 +1,132 @@
+@media screen and (max-width:900px) and (min-width:480px) {
+
+    .services {
+        left:0%;
+        &.onservice {
+            left:10%;
+            &.en-me {
+                left:35%;
+            }
+        }   
+    }
+
+    .service {
+        font-size: 30px;
+        &:nth-child(1) {
+            top:13.2%;
+        }
+        &:nth-child(2) {
+            top: 27.5%;
+        }
+        &:nth-child(3) {
+            top: 42%;
+        }
+        &:nth-child(4) {
+            top: 56%;
+        }
+    }
+
+    .menu-item {
+        font-size: 30px;
+        position: absolute;
+        &:nth-child(1) {
+            top: 13%;
+        }
+        &:nth-child(2) {
+            top: 27.5%;
+        }
+        &:nth-child(3) {
+            top: 42%;
+        }
+        &:nth-child(4) {
+            top: 56%;
+        }
+        &:nth-child(5) {
+            top: 70.5%;
+        }
+        &:nth-child(6) {
+            top: 84.5%;
+        }
+        
+    }
+
+    .menu-items {
+        left:42.5%;
+        &.onservice {
+            &.en-me {
+                left:15%;
+            }
+            left:52.5%;
+            .menu-hr {
+                display: none;
+            }   
+        }
+    }
+
+    .mail.en-me {
+        margin-left:92.5%;
+    }
+
+    .page-content-bar {
+        left:32%;
+        width:50%;
+        .home-page-content {
+            font-size: 20px;
+        }
+        .main-home-bar {
+            top:80%;
+            width: 30%;
+        }
+    }
+
+    .container.en {
+        left:initial;
+    }
+
+    .logo.en {
+        left:60px;
+    }
+
+    .arrow {
+        left:90%;
+        font-size: 30px;
+    }
+
+    .content-bottom {
+        .column1, .column2, .list {
+            font-size: 25px;
+        }
+    }
+    
+
+    .page-switch-content {
+        font-size: 12px;
+        top:35% !important;
+    }
+
+    .info {
+        font-size: 13px;
+        width: 30%;
+    }
+
+    .active-hours {
+        width:30%;
+        font-size: 13px;
+    }
+
+    .clickAndDiscover {
+        width: 17.5%;
+        div {
+            font-size: 12.5px;
+        }
+        i {
+            left:90%;
+        }
+        &:hover {
+            i {
+                transform: scale(1.2);
+            }
+        }
+    }
+    
+}

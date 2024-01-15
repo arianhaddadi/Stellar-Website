@@ -1,0 +1,728 @@
+@import "animations.scss";
+
+
+@mixin pos ($top, $left, $width, $height) {
+    height: $height;
+    width: $width;
+    top:$top;
+    left: $left;
+    position: absolute;
+}
+
+@mixin content-bottom-shared-css($font) {
+    margin-top:10%;
+    animation: movie 0.4s 0.4s forwards;
+    position: absolute;
+    font-size: $font;
+}
+
+@mixin Menu {
+    color: rgb(201, 208, 209);
+    font-size: 45px;
+    cursor: pointer;
+    font-family: Gandom;
+    text-align: right;
+    width:300px;
+    position: absolute;
+    &:hover {
+        color: white;
+        .menu-hr {
+            visibility: visible;
+            animation: shade2 0.4s forwards;
+            &.en-me {
+                transform:translateX(15%) scaleX(1.2);
+            }
+            &.fa-me {
+                transform:translateX(-15%) scaleX(1.2);
+            }
+            
+        }
+    }
+}
+
+.indicators {
+    @include pos(95%, 27%, initial, initial);
+    visibility: hidden;
+    display: flex;
+    li {
+        list-style-type: none;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        border-radius: 100%;
+        background-color: gray;
+        transition:0.3s;
+        &.active {
+            background-color: white;
+        }
+    }
+}
+
+
+
+.container {
+    @include pos(10px, initial, 50px, initial);
+    z-index: 100;
+    cursor: pointer;
+    &.fa {
+        right:40px;
+    }
+    &.en {
+        left:2.5%;
+        .bar.third {
+            margin-left: 0%;
+        }
+    }
+    .bar {
+        width:30px;
+        height:3px;
+        background-color: rgb(184, 193, 194);
+        margin-top:7px;
+        margin-bottom:7px;
+        transition:0.4s;
+        &.third {
+            width:20px;
+            margin-left: 50%;
+        }
+    }
+}
+
+
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    overflow:hidden;
+}
+
+body{
+    overflow-x:hidden;
+    overflow-y: auto;
+    margin:0;
+}
+
+@font-face {
+    font-family: Gandom;
+    src: url("./fonts/Gandom.ttf");
+}
+@font-face {
+    font-family: Operator_Mono;
+    src: url("./fonts/Gandom.ttf");
+}
+
+svg {
+    margin:0;
+    position: absolute;
+    bottom: 0;
+    top:0;
+}
+
+
+.bg {
+    background-image: url("./resources/4.jpg");
+    height: 100%;
+    transition: 0.6s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+line {
+    stroke-width: 1px;
+    stroke: hsla(0,0%,100%,.1);
+}
+
+.home-page {
+    &.main {
+        visibility: visible;
+    }
+    visibility: hidden;
+    transition:linear;
+    @include pos(10%, initial, 100%, 90%);
+    background-color: transparent;
+    .layer {
+        @include pos(initial, initial, 100%, 100%);
+        background-color: black;
+        opacity: 0;
+    }
+}
+
+.clickAndDiscover {
+    font-family: Gandom;
+    @include pos(83.75%, 35%, 25%, 7.5%);
+    display: flex;
+    cursor: pointer;
+    color: white;
+    text-align: right;
+    div {
+        @include pos(11%, 0%, initial, initial);
+        font-size: 15px;
+        i {
+            right:-28%;
+            @include pos(0%, initial, initial, initial);
+            font-size: 25px;
+            transition: 0.6s;
+        }
+    }
+    &:hover {
+        i {
+            transform: scale(1.3);
+        }
+    }
+    &.en-me {
+        font-family: Operator_Mono;
+        div {
+            i{
+                right:110%;
+            }
+        }
+    }
+}
+
+.lang-sel {
+    display: flex;
+    @include pos(10px, 10%, initial, initial);
+    div {
+        cursor: pointer;
+        margin-left: 12.5px;
+        color: rgb(77, 75, 75);
+        &:hover {
+            color: white;
+        }
+    }
+    &.en-me {
+        left:85%
+    }
+}
+
+.page-content-bar {
+    cursor: context-menu;
+    transition:width 0.4s;
+    @include pos(52%, 35%, 28%, 120px);
+}
+
+.main-home-bar {
+    @include pos(90%, 0%, 30%, 5%);
+    background-color: white;
+    transition:0.7s; 
+}
+
+.home-page-content {
+    color: white;
+    font-size: 28px;
+    font-family: Gandom;
+    position: absolute;
+    top:45%;
+    transition:0.4s;
+    &.en-me {
+        font-family: Operator_Mono;
+    }
+}
+
+
+
+.previous-page {
+    cursor:pointer;
+    transition:width 0.3s;
+    .page-switch-content{
+        color:white;
+        font-family: Gandom;
+        @include pos(20%, 30%, initial, initial);
+    }
+    &.en-me {
+        .page-switch-content {
+            font-family: Operator_Mono;
+        }
+    }
+    &:hover .home-bar {
+        transform:translate(25%, 0) scaleX(1.5);
+    } 
+    .home-bar {
+        @include pos(80%, 0%, 60%, 10%);
+        background-color: white;
+        transition:0.7s;
+    }
+
+    &.one{
+        display: none;
+    }
+    &.two {
+        @include pos(11.5%, 0%, 20%, 10%); 
+    }
+    &.three{
+        @include pos(27.5%, 0%, 20%, 10%); 
+    }
+    &.four {
+        @include pos(11.5%, 0%, 20%, 10%); 
+    }
+}
+
+.next-page {
+    cursor: pointer;
+    transition:width 0.4s;
+    .page-switch-content{
+        color:white;
+        font-family: Gandom;
+        @include pos(20%, initial, initial, initial);
+    }
+    &.en-me {
+        .page-switch-content {
+            font-family: Operator_Mono;
+        }
+    }
+    &:hover .home-bar {
+        transform:translate(-40%, 0) scaleX(1.8);
+    } 
+
+    .home-bar {
+        @include pos(80%, 40%, 60%, 10%);
+        background-color: white;
+        transition:0.7s;
+    }
+
+    &.one{
+        @include pos(11.5%, 80%, 20%, 10%); 
+    }
+    &.two {
+        @include pos(27.5%, 80%, 20%, 10%); 
+    }
+    &.three{
+        @include pos(11.5%, 80%, 20%, 10%); 
+    }
+    &.four {
+        display: none;
+    }
+}
+
+
+.main-page {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    z-index: 100;
+    position: absolute;
+    top:10px;
+    width:200px;
+    cursor: pointer;
+    &.fa {
+        right: 95px;
+    }
+    &.en {
+        left:92.5px;
+    }
+}
+
+
+
+.arrow {
+    @include pos(12.5%, 92.5%, initial, initial);
+    color: gray;
+    font-size:30px;
+    cursor: pointer;
+    display: none;
+    &:hover {
+        color:white;
+    }
+    &.en-me {
+        left:5%;
+    }
+}
+
+.mail {
+    cursor: pointer;
+    font-size:35px;
+    color:white;
+    margin-left:30px;
+    margin-top:10px;
+    transition: 0.4s;
+    animation: shade2 0.6s forwards;
+    &:hover {
+        transform: scale(1.2, 1.2);
+    }
+    &.en-me {
+        margin-left:93%;
+    }
+}
+
+
+.info {
+    color:white;
+    @include pos(20%, 60%, initial, initial);
+    direction: rtl;
+    font-family: Gandom;
+    &.en-me {
+        direction: ltr;
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.active-hours {
+    @include pos(20%, 10%, 346px, initial);
+    color: white;
+    direction: rtl;
+    font-family: Gandom;
+    b {
+        margin-left:65%;
+    }
+    .thursday {
+        margin-left:24%;
+    }
+    .friday {
+        margin-left:65%;
+    }
+    &.en-me {
+        direction: ltr;
+        .thursday, .friday, b {
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+
+.contact-us {
+    will-change: top;
+    animation-name: scrollDown;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    @include pos(initial, initial, 100%, 100%);
+    background-color: black !important;
+    z-index: 300;
+}
+
+
+
+
+
+.contact-container {
+    @include pos(40px, initial, 30px, initial);
+    right: 50px;
+    cursor: pointer;
+    &:hover {
+        .contact-bar {
+            background-color: white;
+            &.first {
+                transform:translate(0, 0) rotate(135deg);
+            }
+            &.second {
+                transform:translate(0, -7.8px) rotate(45deg);   
+            }
+        }
+    }
+}
+
+.contact-bar {
+    width:35px;
+    height: 3px;
+    background-color: rgb(184, 193, 194);
+    margin-top: 4px;
+    margin-bottom: 4px;
+    transition: 0.4s;
+    &.first {
+        transform:translate(0, 0px) rotate(45deg) ;
+    }
+    &.second {
+        transform:translate(0, -7.8px) rotate(-45deg) ;   
+    }
+}
+
+.loader {
+    @include pos(0, 0, 100%, 100%);
+    background-color: black;
+    z-index: 1000;
+    div {
+        @include pos(calc(50% - 30px), calc(50% - 150px), 300px, 60px);    
+        background-repeat:no-repeat; 
+        background:url(./resources/7.jpg);
+        transition: 0.4s;
+        &:first-child::after {
+            content: " ";
+            @include pos(0, 0, 100%, 100%);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        &:last-child {
+            width: 0;
+            animation: load forwards 2s;
+        }
+    }
+}
+
+// .loader {
+//     @include pos(0, 0, 100%, 100%);
+//     background-color: black;
+//     z-index: 1000;
+//     div {
+//         background-repeat:no-repeat; 
+//         background:url(./resources/7.jpg);
+//         transition: 0.4s;
+//         &:first-child{
+//             @include pos(calc(50% - 30px), calc(50% - 150px), 300px, 60px);
+//             &::after {
+//                 content: " ";
+//                 @include pos(0, 0, 100%, 100%);
+//                 background: rgba(0, 0, 0, 0.5);
+//             }
+//         }
+//         &:last-child {
+//             position: absolute;
+//             width: 0;
+//             top: calc(50% - 30px);
+//             height: 60px;
+//             // left: calc(50% - 150px);
+//             right: 625px;
+//             animation: load forwards 2s;
+//         }
+//     }
+// }
+
+.menu {
+    @include pos(0%, initial, 100%, 100%);
+    background-color: rgba(0, 0, 0, 0.75);
+    animation-name: shade;
+    animation-duration: 0.9s;
+    animation-fill-mode: forwards;
+}
+
+.menu-items {
+    @include pos(0%, 55%, initial, 100%);
+    transition: 1.3s;
+    &.en-me {
+        left:30%;
+        .menu-item {
+            font-family: Operator_Mono;
+            text-align: left;
+        }
+    }
+}
+
+.services {
+    @include pos(0%, 15%, initial, 100%);
+    transition: 1.3s;
+    &.en-me {
+        left:50%;
+        .service {
+            font-family: Operator_Mono;
+            text-align:left;
+        }
+    }
+}
+
+
+
+
+
+
+.menu-item {
+    @include Menu;
+    
+    &:nth-child(1) {
+        top: 13%;
+    }
+    &:nth-child(2) {
+        top: 27.5%;
+    }
+    &:nth-child(3) {
+        top: 41.6%;
+    }
+    &:nth-child(4) {
+        top: 56%;
+    }
+    &:nth-child(5) {
+        top: 70.25%;
+    }
+    &:nth-child(6) {
+        top: 84.5%;
+    }
+}
+
+.service {
+    @include Menu;
+    width: 500px;
+    visibility: hidden;
+    &:nth-child(1) {
+        top: 13.4%;
+    }
+    &:nth-child(2) {
+        top: 27.75%;
+    }
+    &:nth-child(3) {
+        top: 42.1%;
+    }
+    &:nth-child(4) {
+        top: 56.25%;
+    }
+}
+
+
+
+.menu-hr {
+    &.en-me {
+        @include pos(0%, -30%, 15%, 8px);
+    }
+    &.fa-me {
+        @include pos(0%, 115%, 15%, 8px);
+    }
+    
+    transition:0.8s;
+    animation:shade4 0.5s forwards;
+    background-color: white;
+    visibility: hidden;
+}
+
+
+
+
+
+
+#root {
+    @include pos(initial, initial, 100%, 100%);
+    background-color: rgba(33, 34, 33, 0.7);
+    z-index: 20;
+}
+
+
+
+
+.content {
+    @include pos(initial, initial, 100%, 100%);
+    display: none;
+}
+
+.content-top {
+    background-color:black;
+    width:100%;
+    height: 62%; 
+    .content-top-content {
+        color:white;
+        font-size: 50px;
+        text-align: right;
+        top:50px;
+        right:10%;
+        position: absolute;
+        font-family: Gandom;
+        .content-top-underline {
+            width: 20%;
+            background-color: white;
+            height: 10px;
+            margin-top: 15px;
+            animation: open forwards 1.3s;
+            direction: rtl; 
+            animation-delay: 0.6s;
+        }
+    }
+    .Home {
+        cursor: pointer;
+        color: white;
+        font-size: 50px;
+        @include pos(10%, 93%, initial, initial);
+        transition: 0.4s;
+        &:hover {
+            transform: scale(1.2);
+        }
+        div {
+            font-size: 20px;
+            font-family: Gandom;
+            position:absolute;
+            left:17%;
+        }
+    }   
+    &.en-me {
+        .content-top-content {
+            font-family: Operator_Mono;
+            left:10%;
+            text-align: left;
+            right: initial;
+        }
+        .Home {
+            left:2.5%;
+        }
+    }
+}
+
+
+
+.content-bottom {
+    background-color:white;
+    width:100%;
+    height: 40%;
+    font-family: Gandom;
+    text-align: center;
+    .list {
+        @include content-bottom-shared-css(30px);
+        width:70%;
+        &.en-me {
+            left:10%;
+            direction: ltr;
+            text-align: left;
+        }
+        &.fa-me {
+            direction: rtl;
+            right:10%;
+            text-align: right;
+        }
+    }
+    .column1 {
+        @include content-bottom-shared-css(27.5px);
+        width:30%;
+        right:60%;
+        &.en-me {
+            font-family: Operator_Mono;
+        }
+    }
+    .column2 {
+        @include content-bottom-shared-css(27.5px);
+        width:30%;
+        right:15%;
+        &.en-me{
+            font-family: Operator_Mono;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width:900px) {
+
+    .services.onservice {
+        left:25%;
+        &.en-me {
+            left:40%;
+        }
+    }
+
+
+    .menu-items.onservice {
+        left:70%;
+        .menu-hr {
+            display: none;
+        }
+        &.en-me {
+            left:15%;
+        }
+    }
+}
+
+
+@import "mobile.scss";
+@import "middlescreen.scss";
+
+
+
+

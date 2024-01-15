@@ -1,0 +1,218 @@
+@media screen and (max-width:479px) {
+    .mail {
+        margin-left : 10px ;
+        font-size: 35px;
+        margin-top : 2px ;
+        &.en-me {
+            margin-left: 87.5%;
+        }
+    }
+
+    svg {
+        visibility: hidden;
+    }
+
+    .bar {
+        width: 30px;
+        &.third {
+            width: 20px;
+            margin-left: 50%;
+        }
+    }
+    
+    .clickAndDiscover {
+        width: 40%;
+        left:30%;
+        div {
+            font-size: 12.5px;
+            top:15%;
+        }
+        i {
+            left:85%;
+        }
+        &:hover {
+            i {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .indicators {
+        visibility: visible;
+    }
+
+    .container {
+        right:5px;
+        top:2px;
+        &.fa {
+            right: 5px;
+        }
+        &.en {
+            left:2.5%;
+            width:20%;
+            margin-left:0;
+            padding:0;
+        }
+    }
+
+    .logo {
+        right:45px;
+        width:160px;
+        top: 5px;
+        left:calc(50% - 80px);
+    }
+
+    .contact-container {
+        right: 10px;
+        top:3%;
+    }
+
+    .info {
+        left: 9%;
+        font-size: 12px;
+        width: 90%;
+    }
+
+    .active-hours {
+        top:50%;
+        left:9%;
+        width: 90%;
+    }
+
+    .lang-sel {
+        left:2.5%;
+        &.en-me {
+            left:80%;
+        }
+    }
+
+    .services {
+        &.en-me {
+            left:0%;
+            .service {
+                left:60%;
+            }
+        }
+        left:0%;
+        width:100%;
+        &.onservice {
+            &.en-me {
+                .service {
+                    left:40%;
+                }
+            }
+            .service {
+                left:5%;
+            }
+        }
+    }
+
+    .menu-items {
+        &.en-me {
+            left:0;
+            .menu-item {
+                left:35%;
+                width:150px;
+            }
+        }
+        left:0%;
+        width: 100%;
+        &.onservice {
+            .menu-item {
+                left:60%;
+            }
+            .menu-hr {
+                display: none;
+            }
+            &.en-me {
+                .menu-item {
+                    left:10%;
+                }
+            }
+        }
+    }
+    
+
+    .menu-item {
+        transition:left 0.8s;
+        left:50%;
+        font-size:20px;
+        width: 100px;
+    }
+
+
+    .service {
+        z-index:200;
+        transition: left 0.8s;
+        left:0%;
+        width: 220px;
+        font-size:20px;
+        margin-top:15% !important;
+    }
+
+    .content-top {
+        .Home {
+            font-size: 60px;
+            left:40%;
+            top:1%;
+        }
+    
+        &.en-me {
+            .Home {
+                left: 40%;
+            }
+            .content-top-content {
+                left:32.5%;
+            }
+        }
+        .content-top-content {
+            top:10%;
+            right: 4%;
+            font-size: 25px;
+        }
+    }
+
+    
+    .content-bottom {
+        .column1, .column2, .list {
+            font-size:20px;
+        }
+    }
+
+    .next-page, .previous-page {
+        display: none;
+    }
+
+    .page-content-bar {
+        width:60%;
+        left:20%;
+        &:hover {
+            .home-page-content {
+                transform: scale(1);
+            }
+            .main-home-bar {
+                transform: scaleX(1);
+            }
+        }
+        .home-page-content {
+            text-align: center;
+            font-size: 30px;
+            top:-5%;
+            left:0%;
+        }
+        .main-home-bar {
+            height: 2%;
+            top:70%;
+            left:22%;
+            width:50%;
+        }
+    }
+
+    
+    .arrow {
+        top:20%;
+        left:90%;
+        font-size: 25px;
+    }
+
+}
